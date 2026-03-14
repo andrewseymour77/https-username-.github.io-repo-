@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background:
+    linear-gradient(rgba(229, 240, 255, 0.88), rgba(199, 220, 247, 0.88)),
+    url("https://cdngeneral.storagecafe.com/dmslivecafe/3/1061589/1061589-1-1.jpg?width=-1&height=385&quality=80")
+      center / cover fixed no-repeat;
+  color: #191919;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+h1 {
+  margin: 0.1rem 0 0.2rem;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #133a63;
+}
+
+.unit-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #0f3d68;
+  display: inline-block;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(32, 84, 132, 0.35);
+}
+
+.location-label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #315d84;
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #24527d;
+}
+
+.grid {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.stats {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.forms,
+.tables {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  padding: 0.85rem;
+}
+
+.big {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.form {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.inline-form .inline-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.92rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  border: 1px solid #b0b0b0;
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  background: #fff;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.danger {
+  border-color: #b25454;
+  color: #7d2424;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0.45rem 0.2rem;
+}

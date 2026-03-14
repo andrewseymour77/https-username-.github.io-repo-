@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage Unit Sale Tracker</title>
+    <meta name="theme-color" content="#c2dcff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Sale Tracker" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./assets/icon-192.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <p class="unit-label">Unit XX</p>
+          <h1>Storage Unit Sale Tracker</h1>
+          <p class="location-label">Public Storage, 5711 Roswell Road</p>
+        </div>
+        <div class="header-actions">
+          <button id="install-app" type="button">Install App</button>
+          <button id="reset-data" type="button" class="danger">Reset All Data</button>
+        </div>
+      </header>
+
+      <section class="grid stats">
+        <article class="card">
+          <h2>Facebook Marketplace Post</h2>
+          <form id="marketplace-form" class="form inline-form">
+            <label>
+              Listing URL
+              <input
+                id="marketplace-url"
+                type="url"
+                name="url"
+                placeholder="https://www.facebook.com/marketplace/item/..."
+              />
+            </label>
+            <div class="inline-actions">
+              <button type="submit">Save Link</button>
+              <button id="open-marketplace" type="button">Open Post</button>
+            </div>
+          </form>
+        </article>
+        <article class="card">
+          <h2>Total Sales</h2>
+          <p id="total-sales" class="big">$0.00</p>
+        </article>
+        <article class="card">
+          <h2>CashApp</h2>
+          <p id="sales-cashapp" class="big">$0.00</p>
+        </article>
+        <article class="card">
+          <h2>Venmo</h2>
+          <p id="sales-venmo" class="big">$0.00</p>
+        </article>
+        <article class="card">
+          <h2>Zelle</h2>
+          <p id="sales-zelle" class="big">$0.00</p>
+        </article>
+        <article class="card">
+          <h2>Cash</h2>
+          <p id="sales-cash" class="big">$0.00</p>
+        </article>
+      </section>
+
+      <section class="grid forms">
+        <article class="card">
+          <h2>Add Sale</h2>
+          <form id="sale-form" class="form">
+            <label>
+              Date
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              Item
+              <input type="text" name="item" placeholder="e.g. dresser" required />
+            </label>
+            <label>
+              Amount
+              <input type="number" name="amount" min="0.01" step="0.01" required />
+            </label>
+            <label>
+              Payment Method
+              <select name="paymentMethod" required>
+                <option value="CashApp">CashApp</option>
+                <option value="Venmo">Venmo</option>
+                <option value="Zelle">Zelle</option>
+                <option value="Cash">Cash</option>
+              </select>
+            </label>
+            <label>
+              Notes
+              <input type="text" name="notes" placeholder="optional" />
+            </label>
+            <button type="submit">Save Sale</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Log Activity</h2>
+          <form id="activity-form" class="form">
+            <label>
+              Date
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              Type
+              <select name="type" required>
+                <option value="Hit">Hit</option>
+                <option value="Question">Question</option>
+                <option value="Interest">Interest</option>
+              </select>
+            </label>
+            <label>
+              Channel
+              <input type="text" name="channel" placeholder="e.g. Facebook Marketplace" />
+            </label>
+            <label>
+              Details
+              <input type="text" name="details" placeholder="optional" />
+            </label>
+            <button type="submit">Save Activity</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="grid stats">
+        <article class="card">
+          <h2>Hits</h2>
+          <p id="count-hit" class="big">0</p>
+        </article>
+        <article class="card">
+          <h2>Questions</h2>
+          <p id="count-question" class="big">0</p>
+        </article>
+        <article class="card">
+          <h2>Interest</h2>
+          <p id="count-interest" class="big">0</p>
+        </article>
+      </section>
+
+      <section class="grid tables">
+        <article class="card">
+          <h2>Sales History</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Item</th>
+                  <th>Method</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="sales-body"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Activity History</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Type</th>
+                  <th>Channel</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody id="activity-body"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="./src/saleTracker.js"></script>
+  </body>
+</html>
