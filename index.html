@@ -24,6 +24,53 @@
           <button id="reset-data" type="button" class="danger">Reset All Data</button>
         </div>
       </header>
+      <section class="grid">
+        <article class="card">
+          <h2>Cloud Sync</h2>
+          <p class="card-copy">
+            Optional Supabase backup so the same sales data can be loaded on your
+            phone and computer.
+          </p>
+          <form id="cloud-form" class="form">
+            <label>
+              Supabase Project URL
+              <input
+                id="cloud-url"
+                type="url"
+                name="url"
+                placeholder="https://your-project.supabase.co"
+              />
+            </label>
+            <label>
+              Supabase Anon Key
+              <input
+                id="cloud-anon-key"
+                type="password"
+                name="anonKey"
+                placeholder="Paste the public anon key"
+              />
+            </label>
+            <label>
+              Cloud Record ID
+              <input
+                id="cloud-record-id"
+                type="text"
+                name="recordId"
+                placeholder="unit-6103"
+              />
+            </label>
+            <div class="inline-actions">
+              <button type="submit" class="primary-button">Save Cloud Settings</button>
+              <button id="cloud-sync-now" type="button">Sync Now</button>
+              <button id="cloud-load-now" type="button">Load Cloud Data</button>
+            </div>
+            <p class="card-copy compact-copy">
+              Run the SQL in <code>supabase-setup.sql</code> once inside Supabase.
+            </p>
+            <p id="cloud-status" class="form-feedback" aria-live="polite"></p>
+          </form>
+        </article>
+      </section>
 
       <section class="grid stats">
         <article class="card">
