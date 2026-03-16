@@ -116,6 +116,7 @@ h2 {
 .inline-form .inline-actions {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 label {
