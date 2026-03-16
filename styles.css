@@ -143,6 +143,27 @@ button:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
+.primary-button {
+  font-weight: 700;
+  background: #1f6fb2;
+  border-color: #1f6fb2;
+  color: #fff;
+}
+
+.form-feedback {
+  min-height: 1.2rem;
+  margin: 0;
+  font-size: 0.88rem;
+  color: #1f6fb2;
+}
+
+.form-feedback[data-tone="error"] {
+  color: #9d2a2a;
+}
+
+.form-feedback[data-tone="success"] {
+  color: #23663a;
+}
 
 .danger {
   border-color: #b25454;
